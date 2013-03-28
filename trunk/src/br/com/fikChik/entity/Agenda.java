@@ -20,6 +20,7 @@ public class Agenda implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	// Define um ID para a entidade
 	@Id
 	@Column(name="CD_AGENDA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqAgenda")
