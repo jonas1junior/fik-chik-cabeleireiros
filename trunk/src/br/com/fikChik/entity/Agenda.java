@@ -24,38 +24,52 @@ public class Agenda implements Serializable{
 	@Id
 	@Column(name="CD_AGENDA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqAgenda")
-	private int cdAgenda;
+	private int codigoAgenda;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name="DATA", nullable=false)
 	private Calendar data;
 	
 	@Column(name="CD_PESSOA")
-	private Pessoa cdPessoa;
+	private Pessoa codigoPessoa;	
 	
 	
-	
-	public Pessoa getCd_pessoa() {
-		return cdPessoa;
+	public Agenda() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	public void setCd_pessoa(Pessoa cdPessoa) {
-		this.cdPessoa = cdPessoa;
+
+	public Agenda(int codigoAgenda, Calendar data, Pessoa codigoPessoa) {
+		super();
+		this.codigoAgenda = codigoAgenda;
+		this.data = data;
+		this.codigoPessoa = codigoPessoa;
 	}
 
-	public int getCdAgenda() {
-		return cdAgenda;
-	}
 
-	public void setCdAgenda(int cdAgenda) {
-		this.cdAgenda = cdAgenda;
+	public int getCodigoAgenda() {
+		return codigoAgenda;
 	}
 
 	public Calendar getData() {
 		return data;
 	}
 
+
 	public void setData(Calendar data) {
 		this.data = data;
 	}
+
+
+	public Pessoa getCodigoPessoa() {
+		return codigoPessoa;
+	}
+
+
+	public void setCodigoPessoa(Pessoa codigoPessoa) {
+		this.codigoPessoa = codigoPessoa;
+	}
+		
+
 }

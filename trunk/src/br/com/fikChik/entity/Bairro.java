@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="CAB_BAIRRO")
-@SequenceGenerator(name="seqTipoLogradouro", sequenceName="SEQ_TIPO_LOGRADOURO", allocationSize=1)
+@SequenceGenerator(name="seqBairro", sequenceName="SEQ_BAIRRO", allocationSize=1)
 public class Bairro implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -20,38 +20,58 @@ public class Bairro implements Serializable {
 	
 	@Id
 	@Column(name="CD_BAIRRO")
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqTipoLogradouro")
-	private int cdTipoLogradouro;
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqBairro")
+	private int codigoBairro;
 	
-	@Column(name="DS_BAIRRO")
-	private String dsTipoLogradouro;
+	@Column(name="DS_BAIRRO",nullable=false,length=100)
+	private String descricaoBairro;
 	
 	@Column(name="CD_CIDADE")
-	private Cidade cdCidade;
+	private Cidade codigoCidade;
+
+	
+	public Bairro() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Bairro(int codigoBairro, String descricaoBairro,
+			Cidade codigoCidade) {
+		super();
+		this.codigoBairro = codigoBairro;
+		this.descricaoBairro = descricaoBairro;
+		this.codigoCidade = codigoCidade;
+	}
+
+
+	public int getCodigoBairro() {
+		return codigoBairro;
+	}
+
+
+	public String getDescricaoBairro() {
+		return descricaoBairro;
+	}
+
+
+	public void setDescricaoBairro(String descricaoBairro) {
+		if(descricaoBairro.length() > 100){
+			throw new IllegalArgumentException("Insira no máximo 100 caracteres para a Descrição do Bairro");
+		}
+		this.descricaoBairro = descricaoBairro;
+	}
+
+
+	public Cidade getCodigoCidade() {
+		return codigoCidade;
+	}
+
+
+	public void setCodigoCidade(Cidade codigoCidade) {
+		this.codigoCidade = codigoCidade;
+	}
+
 	
 	
-
-	synchronized int getCdTipoLogradouro() {
-		return cdTipoLogradouro;
-	}
-
-	synchronized void setCdTipoLogradouro(int cdTipoLogradouro) {
-		this.cdTipoLogradouro = cdTipoLogradouro;
-	}
-
-	synchronized String getDsTipoLogradouro() {
-		return dsTipoLogradouro;
-	}
-
-	synchronized void setDsTipoLogradouro(String dsTipoLogradouro) {
-		this.dsTipoLogradouro = dsTipoLogradouro;
-	}
-
-	synchronized Cidade getCdCidade() {
-		return cdCidade;
-	}
-
-	synchronized void setCdCidade(Cidade cdCidade) {
-		this.cdCidade = cdCidade;
-	}
 }
