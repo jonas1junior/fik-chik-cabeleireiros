@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -17,32 +19,55 @@ public class Cidade implements Serializable{
 	
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqCidade")
 	@Column(name="CD_CIDADE")
-	private int cdCidade;
+	private int codigodCidade;
 	
-	@Column(name="DESCRICAO")
-	private String descricao;
+	@Column(name="DE_CIDADE",nullable=false,length=300)
+	private String descricaoCidade;
 	
 	@Column(name="CD_ESTADO")
-	private Estado cdEstado;
+	private Estado codigoEstado;
+	
+
+	public Cidade() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Cidade(int codigodCidade, String descricaoCidade, Estado codigoEstado) {
+		super();
+		this.codigodCidade = codigodCidade;
+		this.descricaoCidade = descricaoCidade;
+		this.codigoEstado = codigoEstado;
+	}
+
+
+	public int getCodigodCidade() {
+		return codigodCidade;
+	}
+
+
+	public String getDescricaoCidade() {
+		return descricaoCidade;
+	}
+
+	public void setDescricaoCidade(String descricaoCidade) {
+		if(descricaoCidade.length() > 300){
+			throw new IllegalArgumentException("Insira no máximo 300 Caracteres na Descrição da Cidade");
+		}
+		this.descricaoCidade = descricaoCidade;
+	}
+
+	public Estado getCodigoEstado() {
+		return codigoEstado;
+	}
+
+	public void setCodigoEstado(Estado codigoEstado) {
+		this.codigoEstado = codigoEstado;
+	}
 	
 	
-	synchronized int getCdCidade() {
-		return cdCidade;
-	}
-	synchronized void setCdCidade(int cdCidade) {
-		this.cdCidade = cdCidade;
-	}
-	synchronized String getDescricao() {
-		return descricao;
-	}
-	synchronized void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	synchronized Estado getCdEstado() {
-		return cdEstado;
-	}
-	synchronized void setCdEstado(Estado cdEstado) {
-		this.cdEstado = cdEstado;
-	}
+	
 }
