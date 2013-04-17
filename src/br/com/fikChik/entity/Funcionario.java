@@ -20,38 +20,9 @@ public class Funcionario implements Serializable{
 	@Id
 	@Column(name="CD_PESSOA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqFuncionario")
-	private int cdPessoa;
-	
-	@Column(name="CPF", nullable=false)
-	private String cpf;
-	
-	@Column(name="RG", nullable=false)
-	private String rg;
+	private Pessoa codigoPessoa;
+	// verificar a herança
 	
 	
 	
-	
-	synchronized int getCdPessoa() {
-		return cdPessoa;
-	}
-
-	synchronized void setCdPessoa(int cdPessoa) {
-		this.cdPessoa = cdPessoa;
-	}
-
-	synchronized String getCpf() {
-		return cpf;
-	}
-
-	synchronized void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	synchronized String getRg() {
-		return rg;
-	}
-
-	synchronized void setRg(String rg) {
-		this.rg = rg;
-	}
 }
