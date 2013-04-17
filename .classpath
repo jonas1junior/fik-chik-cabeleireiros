@@ -23,5 +23,9 @@
 	<classpathentry kind="lib" path="src/jboss-logging-3.1.0.GA.jar"/>
 	<classpathentry kind="lib" path="src/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
 	<classpathentry kind="lib" path="src/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="src/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="src/javax.faces-2.1.14.jar"/>
+	<classpathentry kind="lib" path="src/all-themes-1.0.9.jar"/>
+	<classpathentry kind="lib" path="src/primefaces-3.5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
