@@ -22,5 +22,5 @@ public class Cliente implements Serializable{
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqCliente")
 	// verificar a herança
 	
-	private Pessoa codigoPessoa;
+	private Pessoa pessoa;
 }

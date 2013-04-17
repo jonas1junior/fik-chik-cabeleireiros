@@ -21,13 +21,13 @@ public class Cidade implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqCidade")
 	@Column(name="CD_CIDADE")
-	private int codigodCidade;
+	private int codigoCidade;
 	
 	@Column(name="DE_CIDADE",nullable=false,length=300)
 	private String descricaoCidade;
 	
 	@Column(name="CD_ESTADO")
-	private Estado codigoEstado;
+	private Estado estado;
 	
 
 	public Cidade() {
@@ -36,16 +36,16 @@ public class Cidade implements Serializable{
 	}
 
 
-	public Cidade(int codigodCidade, String descricaoCidade, Estado codigoEstado) {
+	public Cidade(int codigoCidade, String descricaoCidade, Estado estado) {
 		super();
-		this.codigodCidade = codigodCidade;
+		this.codigoCidade = codigoCidade;
 		this.descricaoCidade = descricaoCidade;
-		this.codigoEstado = codigoEstado;
+		this.estado = estado;
 	}
 
 
-	public int getCodigodCidade() {
-		return codigodCidade;
+	public int getCodigoCidade() {
+		return codigoCidade;
 	}
 
 
@@ -60,12 +60,12 @@ public class Cidade implements Serializable{
 		this.descricaoCidade = descricaoCidade;
 	}
 
-	public Estado getCodigoEstado() {
-		return codigoEstado;
+	public Estado getEstado() {
+		return estado;
 	}
 
-	public void setCodigoEstado(Estado codigoEstado) {
-		this.codigoEstado = codigoEstado;
+	public void setEstado(Estado estado) {
+		this.estado = estado;
 	}
 	
 	
