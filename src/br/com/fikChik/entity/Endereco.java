@@ -30,10 +30,10 @@ public class Endereco implements Serializable{
 	private int cep;
 	
 	@Column(name="CD_TIPO_LOGRADOURO")
-	private TipoLogradouro codigoTipoLogradouro;
+	private TipoLogradouro tipoLogradouro;
 	
 	@Column(name="CD_BAIRRO")
-	private Bairro codigoBairro;
+	private Bairro bairro;
 	
 
 	public Endereco() {
@@ -42,13 +42,13 @@ public class Endereco implements Serializable{
 	}
 
 	public Endereco(int codigoEndereco, String nomeLogradouro, int cep,
-			TipoLogradouro codigoTipoLogradouro, Bairro codigoBairro) {
+			TipoLogradouro tipoLogradouro, Bairro bairro) {
 		super();
 		this.codigoEndereco = codigoEndereco;
 		this.nomeLogradouro = nomeLogradouro;
 		this.cep = cep;
-		this.codigoTipoLogradouro = codigoTipoLogradouro;
-		this.codigoBairro = codigoBairro;
+		this.tipoLogradouro = tipoLogradouro;
+		this.bairro = bairro;
 	}
 
 	public int getCodigoEndereco() {
@@ -74,20 +74,20 @@ public class Endereco implements Serializable{
 		this.cep = cep;
 	}
 
-	public TipoLogradouro getCodigoTipoLogradouro() {
-		return codigoTipoLogradouro;
+	public TipoLogradouro getTipoLogradouro() {
+		return tipoLogradouro;
 	}
 
-	public void setCodigoTipoLogradouro(TipoLogradouro codigoTipoLogradouro) {
-		this.codigoTipoLogradouro = codigoTipoLogradouro;
+	public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
+		this.tipoLogradouro = tipoLogradouro;
 	}
 
-	public Bairro getCodigoBairro() {
-		return codigoBairro;
+	public Bairro getBairro() {
+		return bairro;
 	}
 
-	public void setCodigoBairro(Bairro codigoBairro) {
-		this.codigoBairro = codigoBairro;
+	public void setBairro(Bairro bairro) {
+		this.bairro = bairro;
 	}
 	
 	

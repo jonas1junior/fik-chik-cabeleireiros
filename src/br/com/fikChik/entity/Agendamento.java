@@ -24,25 +24,29 @@ public class Agendamento implements Serializable{
 	private int codigoAgendamento;
 	
 	@Column(name="CD_PESSOA")
-	private Pessoa codigoPessoa;
+	private Pessoa pessoa;
 	
 	@Column(name="CD_SERVICO")
-	private Servico codigoServico;
+	private Servico servico;
 	
 	@Column(name="CD_STATUS")
-	private Status codigoStatus;
+	private Status status;
 	
 	@Column(name="CD_HORARIO")
-	private Horario codigoHorario;
+	private Horario horario;
+	
+	
+	
+	
 
-	public Agendamento(int codigoAgendamento, Pessoa codigoPessoa,
-			Servico codigoServico, Status codigoStatus, Horario codigoHorario) {
+	public Agendamento(int codigoAgendamento, Pessoa pessoa, Servico servico,
+			Status status, Horario horario) {
 		super();
 		this.codigoAgendamento = codigoAgendamento;
-		this.codigoPessoa = codigoPessoa;
-		this.codigoServico = codigoServico;
-		this.codigoStatus = codigoStatus;
-		this.codigoHorario = codigoHorario;
+		this.pessoa = pessoa;
+		this.servico = servico;
+		this.status = status;
+		this.horario = horario;
 	}
 
 	public Agendamento() {
@@ -54,38 +58,42 @@ public class Agendamento implements Serializable{
 		return codigoAgendamento;
 	}
 
-
-	public Pessoa getCodigoPessoa() {
-		return codigoPessoa;
+	public void setCodigoAgendamento(int codigoAgendamento) {
+		this.codigoAgendamento = codigoAgendamento;
 	}
 
-	public void setCodigoPessoa(Pessoa codigoPessoa) {
-		this.codigoPessoa = codigoPessoa;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
 
-	public Servico getCodigoServico() {
-		return codigoServico;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 
-	public void setCodigoServico(Servico codigoServico) {
-		this.codigoServico = codigoServico;
+	public Servico getServico() {
+		return servico;
 	}
 
-	public Status getCodigoStatus() {
-		return codigoStatus;
+	public void setServico(Servico servico) {
+		this.servico = servico;
 	}
 
-	public void setCodigoStatus(Status codigoStatus) {
-		this.codigoStatus = codigoStatus;
+	public Status getStatus() {
+		return status;
 	}
 
-	public Horario getCodigoHorario() {
-		return codigoHorario;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
-	public void setCodigoHorario(Horario codigoHorario) {
-		this.codigoHorario = codigoHorario;
+	public Horario getHorario() {
+		return horario;
 	}
+
+	public void setHorario(Horario horario) {
+		this.horario = horario;
+	}
+
 	
 
 	

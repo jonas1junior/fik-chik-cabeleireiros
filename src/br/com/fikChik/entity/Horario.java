@@ -1,6 +1,7 @@
 package br.com.fikChik.entity;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,26 +23,61 @@ public class Horario implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqHorario")
-	private int cdHorario;
+	@Column(name="CD_HORARIO")
+	private int codigoHorario;
 	
 	@Column(name="OCUPADO")
 	private Ocupado ocupado;
 	
+	@Column(name="HORARIO")
+	private Calendar horario;
 	
-	
-	synchronized int getCdHorario() {
-		return cdHorario;
+	@Column(name="CD_AGENDA")
+	private Agenda agenda;
+
+	public Horario(int codigoHorario, Ocupado ocupado, Calendar horario,
+			Agenda agenda) {
+		super();
+		this.codigoHorario = codigoHorario;
+		this.ocupado = ocupado;
+		this.horario = horario;
+		this.agenda = agenda;
+	}
+
+	public Horario() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
-	synchronized void setCdHorario(int cdHorario) {
-		this.cdHorario = cdHorario;
+
+	public int getCodigoHorario() {
+		return codigoHorario;
 	}
-	
-	synchronized Ocupado getOcupado() {
+
+
+	public Ocupado getOcupado() {
 		return ocupado;
 	}
-	
-	synchronized void setOcupado(Ocupado ocupado) {
+
+	public void setOcupado(Ocupado ocupado) {
 		this.ocupado = ocupado;
 	}
+
+	public Calendar getHorario() {
+		return horario;
+	}
+
+	public void setHorario(Calendar horario) {
+		this.horario = horario;
+	}
+
+	public Agenda getAgenda() {
+		return agenda;
+	}
+
+	public void setAgenda(Agenda agenda) {
+		this.agenda = agenda;
+	}
+	
+	
 }

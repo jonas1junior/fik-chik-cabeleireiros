@@ -27,7 +27,7 @@ public class Bairro implements Serializable {
 	private String descricaoBairro;
 	
 	@Column(name="CD_CIDADE")
-	private Cidade codigoCidade;
+	private Cidade cidade;
 
 	
 	public Bairro() {
@@ -37,11 +37,11 @@ public class Bairro implements Serializable {
 
 
 	public Bairro(int codigoBairro, String descricaoBairro,
-			Cidade codigoCidade) {
+			Cidade cidade) {
 		super();
 		this.codigoBairro = codigoBairro;
 		this.descricaoBairro = descricaoBairro;
-		this.codigoCidade = codigoCidade;
+		this.cidade = cidade;
 	}
 
 
@@ -64,12 +64,12 @@ public class Bairro implements Serializable {
 
 
 	public Cidade getCodigoCidade() {
-		return codigoCidade;
+		return cidade;
 	}
 
 
-	public void setCodigoCidade(Cidade codigoCidade) {
-		this.codigoCidade = codigoCidade;
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
 	}
 
 	

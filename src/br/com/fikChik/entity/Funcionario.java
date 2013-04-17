@@ -20,7 +20,7 @@ public class Funcionario implements Serializable{
 	@Id
 	@Column(name="CD_PESSOA")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqFuncionario")
-	private Pessoa codigoPessoa;
+	private Pessoa pessoa;
 	// verificar a herança
 	
 	
