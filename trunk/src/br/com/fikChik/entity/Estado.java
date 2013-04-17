@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="CAB_ESTADO")
-@SequenceGenerator(name = "seqAgenda", sequenceName="SEQ_ESTADO", allocationSize=1)
+@SequenceGenerator(name = "seqEstado", sequenceName="SEQ_ESTADO", allocationSize=1)
 public class Estado implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -20,35 +20,56 @@ public class Estado implements Serializable{
 	@Id
 	@Column(name="CD_ESTADO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqEstado")
-	private int cdEstado;
+	private int codigoEstado;
 	
-	@Column(name="DESCRICAO", nullable=false)
-	private String descricao;
+	@Column(name="DS_ESTADO", nullable=false,length=100)
+	private String descricaoEstado;
 	
-	@Column(name="SIGLA")
-	private String sigla;
+	@Column(name="SIGLA",nullable=false,length=2)
+	private String siglaEstado;
+	
 
-	synchronized int getCdEstado() {
-		return cdEstado;
+	public Estado() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	synchronized void setCdEstado(int cdEstado) {
-		this.cdEstado = cdEstado;
+
+	
+	public Estado(int codigoEstado, String descricaoEstado, String siglaEstado) {
+		super();
+		this.codigoEstado = codigoEstado;
+		this.descricaoEstado = descricaoEstado;
+		this.siglaEstado = siglaEstado;
+	}
+	
+
+	public int getCodigoEstado() {
+		return codigoEstado;
 	}
 
-	synchronized String getDescricao() {
-		return descricao;
+
+	public String getDescricaoEstado() {
+		return descricaoEstado;
 	}
 
-	synchronized void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescricaoEstado(String descricaoEstado) {
+		if(descricaoEstado.length() > 100){
+			throw new IllegalArgumentException("Insira no máximo 100 caracteres para a descricao do Estado");
+		}
+		this.descricaoEstado = descricaoEstado;
 	}
 
-	synchronized String getSigla() {
-		return sigla;
+	public String getSiglaEstado() {
+		return siglaEstado;
 	}
 
-	synchronized void setSigla(String sigla) {
-		this.sigla = sigla;
+	public void setSiglaEstado(String siglaEstado) {
+		if(siglaEstado.length() > 100){
+			throw new IllegalArgumentException("Insira no máximo 2 caracteres para a descricao da sigla do Estadp");
+		}
+		this.siglaEstado = siglaEstado;
 	}
+
+	
 }
