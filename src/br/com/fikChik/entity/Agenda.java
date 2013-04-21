@@ -30,8 +30,8 @@ public class Agenda implements Serializable{
 	@Column(name="DATA", nullable=false)
 	private Calendar data;
 	
-	@Column(name="CD_PESSOA")
-	private Pessoa pessoa;	
+	@Column(name="CD_PESSOA_FUNCIONARIO")
+	private Funcionario funcionario;	
 	
 	
 	public Agenda() {
@@ -40,11 +40,11 @@ public class Agenda implements Serializable{
 	}
 
 
-	public Agenda(int codigoAgenda, Calendar data, Pessoa pessoa) {
+	public Agenda(int codigoAgenda, Calendar data, Funcionario funcionario) {
 		super();
 		this.codigoAgenda = codigoAgenda;
 		this.data = data;
-		this.pessoa = pessoa;
+		this.funcionario = funcionario;
 	}
 
 
@@ -62,13 +62,13 @@ public class Agenda implements Serializable{
 	}
 
 
-	public Pessoa getPessoa() {
-		return pessoa;
+	public Funcionario getFuncionario() {
+		return funcionario;
 	}
 
 
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
 		
 

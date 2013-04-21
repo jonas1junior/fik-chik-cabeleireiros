@@ -23,8 +23,8 @@ public class Agendamento implements Serializable{
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seqAgendamento")
 	private int codigoAgendamento;
 	
-	@Column(name="CD_PESSOA")
-	private Pessoa pessoa;
+	@Column(name="CD_PESSOA_CLIENTE")
+	private Cliente cliente;
 	
 	@Column(name="CD_SERVICO")
 	private Servico servico;
@@ -35,18 +35,21 @@ public class Agendamento implements Serializable{
 	@Column(name="CD_HORARIO")
 	private Horario horario;
 	
+	@Column(name="CD_PESSOA_FUNCIONARIO")
+	private Funcionario funcionario;
 	
 	
 	
 
-	public Agendamento(int codigoAgendamento, Pessoa pessoa, Servico servico,
-			Status status, Horario horario) {
+	public Agendamento(int codigoAgendamento, Cliente cliente, Servico servico,
+			Status status, Horario horario,Funcionario funcionario) {
 		super();
 		this.codigoAgendamento = codigoAgendamento;
-		this.pessoa = pessoa;
+		this.cliente = cliente;
 		this.servico = servico;
 		this.status = status;
 		this.horario = horario;
+		this.funcionario = funcionario;
 	}
 
 	public Agendamento() {
@@ -62,12 +65,12 @@ public class Agendamento implements Serializable{
 		this.codigoAgendamento = codigoAgendamento;
 	}
 
-	public Pessoa getPessoa() {
-		return pessoa;
+	public Cliente getCliente() {
+		return cliente;
 	}
 
-	public void setPessoa(Pessoa pessoa) {
-		this.pessoa = pessoa;
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public Servico getServico() {
@@ -92,6 +95,14 @@ public class Agendamento implements Serializable{
 
 	public void setHorario(Horario horario) {
 		this.horario = horario;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
 	}
 
 	
