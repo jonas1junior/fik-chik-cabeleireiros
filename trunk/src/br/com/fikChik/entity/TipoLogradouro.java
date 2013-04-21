@@ -20,27 +20,40 @@ public class TipoLogradouro implements Serializable {
 	@Id
 	@Column(name="CD_TIPO_LOGRADOURO")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqTipoLogradouro")
-	private int cdTipoLogradouro;
+	private int codigoTipoLogradouro;
 	
-	@Column(name="DS_TIPO_LOGRADOURO")
-	private String dsTipoLogradouro;
+	@Column(name="DS_TIPO_LOGRADOURO",nullable=false,length=30)
+	private String descricao;
+
+	public TipoLogradouro(int codigoTipoLogradouro, String descricao) {
+		super();
+		this.codigoTipoLogradouro = codigoTipoLogradouro;
+		this.descricao = descricao;
+	}
+
+	public TipoLogradouro() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getCodigoTipoLogradouro() {
+		return codigoTipoLogradouro;
+	}
+
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		if(descricao.length()>30){
+			throw new IllegalArgumentException("Insira no máximo 30 caracteres para a descrição do Tipo de Logradouro");
+		}
+		this.descricao = descricao;
+	}
 	
 	
+	
 
-	synchronized int getCdTipoLogradouro() {
-		return cdTipoLogradouro;
-	}
-
-	synchronized void setCdTipoLogradouro(int cdTipoLogradouro) {
-		this.cdTipoLogradouro = cdTipoLogradouro;
-	}
-
-	synchronized String getDsTipoLogradouro() {
-		return dsTipoLogradouro;
-	}
-
-	synchronized void setDsTipoLogradouro(String dsTipoLogradouro) {
-		this.dsTipoLogradouro = dsTipoLogradouro;
-	}
 	
 }

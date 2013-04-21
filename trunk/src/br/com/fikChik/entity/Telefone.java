@@ -22,60 +22,73 @@ public class Telefone implements Serializable{
 	@Id
 	@Column(name="CD_TELEFONE")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqTelefone")
-	private int cdTelefone;
+	private int codigoTelefone;
 	
-	@Column(name="NM_DDD")
-	private String nmDDD;
+	@Column(name="NM_DDD",nullable=false)
+	private String numeroDDD;
 	
-	@Column(name="NM_TELEFONE")
-	private String nmTelefone;
+	@Column(name="NM_TELEFONE",nullable=false)
+	private String numeroTelefone;
 	
 	@Column(name="CD_PESSOA")
-	private Pessoa cdPessoa;
+	private Pessoa pessoa;
 	
 	@Column(name="CD_TIPO_TELEFONE")
-	private Endereco cdTipoTelefone;
+	private TipoTelefone tipoTelefone;
+
+	public Telefone() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Telefone(int codigoTelefone, String numeroDDD,
+			String numeroTelefone, Pessoa pessoa, TipoTelefone tipoTelefone) {
+		super();
+		this.codigoTelefone = codigoTelefone;
+		this.numeroDDD = numeroDDD;
+		this.numeroTelefone = numeroTelefone;
+		this.pessoa = pessoa;
+		this.tipoTelefone = tipoTelefone;
+	}
+
+	public int getCodigoTelefone() {
+		return codigoTelefone;
+	}
+
+	public String getNumeroDDD() {
+		return numeroDDD;
+	}
+
+	public void setNumeroDDD(String numeroDDD) {
+		this.numeroDDD = numeroDDD;
+	}
+
+	public String getNumeroTelefone() {
+		return numeroTelefone;
+	}
+
+	public void setNumeroTelefone(String numeroTelefone) {
+		this.numeroTelefone = numeroTelefone;
+	}
+
+	public Pessoa getPessoa() {
+		return pessoa;
+	}
+
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
+	}
+
+	public TipoTelefone getTipoTelefone() {
+		return tipoTelefone;
+	}
+
+	public void setTipoTelefone(TipoTelefone tipoTelefone) {
+		this.tipoTelefone = tipoTelefone;
+	}
 	
 	
 	
 
-	synchronized int getCdTelefone() {
-		return cdTelefone;
-	}
-
-	synchronized void setCdTelefone(int cdTelefone) {
-		this.cdTelefone = cdTelefone;
-	}
-
-	synchronized String getNmDDD() {
-		return nmDDD;
-	}
-
-	synchronized void setNmDDD(String nmDDD) {
-		this.nmDDD = nmDDD;
-	}
-
-	synchronized String getNmTelefone() {
-		return nmTelefone;
-	}
-
-	synchronized void setNmTelefone(String nmTelefone) {
-		this.nmTelefone = nmTelefone;
-	}
-
-	synchronized Pessoa getCdPessoa() {
-		return cdPessoa;
-	}
-
-	synchronized void setCdPessoa(Pessoa cdPessoa) {
-		this.cdPessoa = cdPessoa;
-	}
-
-	synchronized Endereco getCdTipoTelefone() {
-		return cdTipoTelefone;
-	}
-
-	synchronized void setCdTipoTelefone(Endereco cdTipoTelefone) {
-		this.cdTipoTelefone = cdTipoTelefone;
-	}
+	
 }
