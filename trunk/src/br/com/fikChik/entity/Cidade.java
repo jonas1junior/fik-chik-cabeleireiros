@@ -23,7 +23,7 @@ public class Cidade implements Serializable{
 	@Column(name="CD_CIDADE")
 	private int codigoCidade;
 	
-	@Column(name="DE_CIDADE",nullable=false,length=300)
+	@Column(name="DS_CIDADE",nullable=false,length=300)
 	private String descricaoCidade;
 	
 	@Column(name="CD_ESTADO")
