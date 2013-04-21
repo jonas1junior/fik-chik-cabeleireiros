@@ -22,27 +22,49 @@ public class TipoTelefone implements Serializable {
 	@Id
 	@Column(name="CD_TIPO_TELEFONE")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="seqTipoTelefone")
-	private int cdTipoTelefone;
+	private int codigoTipoTelefone;
 	
-	@Column(name="DS_TIPO_TELEFONE")
-	private String dsTipoTelefone;
+	@Column(name="DS_TIPO_TELEFONE", nullable=false,length=50)
+	private String descricaoTipoTelefone;
 	
 	
 
-	synchronized int getCdTipoTelefone() {
-		return cdTipoTelefone;
+	public TipoTelefone() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
-	synchronized void setCdTipoTelefone(int cdTipoTelefone) {
-		this.cdTipoTelefone = cdTipoTelefone;
+
+
+	public TipoTelefone(int codigoTipoTelefone, String descricaoTipoTelefone) {
+		super();
+		this.codigoTipoTelefone = codigoTipoTelefone;
+		this.descricaoTipoTelefone = descricaoTipoTelefone;
 	}
 
-	synchronized String getDsTipoTelefone() {
-		return dsTipoTelefone;
+
+
+	public int getCodigoTipoTelefone() {
+		return codigoTipoTelefone;
 	}
 
-	synchronized void setDsTipoTelefone(String dsTipoTelefone) {
-		this.dsTipoTelefone = dsTipoTelefone;
+
+
+	public String getDescricaoTipoTelefone() {
+		return descricaoTipoTelefone;
 	}
+
+
+
+	public void setDescricaoTipoTelefone(String descricaoTipoTelefone) {
+		if(descricaoTipoTelefone.length()>50){
+			throw new IllegalArgumentException("Insira no máximo 50 caracteres para a descrição do tipo de telefone");
+		}
+		this.descricaoTipoTelefone = descricaoTipoTelefone;
+	}
+	
+	
+
+	
 	
 }
